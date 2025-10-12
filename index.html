@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Ana Sayfa</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: url('images/1.png') no-repeat center center fixed;
+      background-size: cover;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="search-icon" onclick="goHome()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#fff" viewBox="0 0 24 24">
+      <path d="M21.53 20.47l-4.82-4.82A7.931 7.931 0 0018 10a8 8 0 10-8 8 7.931 7.931 0 005.65-2.29l4.82 4.82a.75.75 0 101.06-1.06zM10 16a6 6 0 110-12 6 6 0 010 12z"/>
+    </svg>
+  </div>
+
+  <div class="center-box">
+    <input type="text" id="codeInput" maxlength="3" placeholder="Kod (örn: 111)">
+    <button onclick="goToPage()">Git</button>
+  </div>
+
+  <script>
+    function goHome() {
+      window.location.href = "index.html";
+    }
+
+    function goToPage() {
+      const input = document.getElementById("codeInput").value;
+      const code = input.trim();
+
+      if (!/^\d{3}$/.test(code)) {
+        alert("Laaa Şunu Doğru Yaz");
+        return;
+      }
+
+      window.location.href = code + ".html";
+    }
+  </script>
+
+</body>
+</html>
